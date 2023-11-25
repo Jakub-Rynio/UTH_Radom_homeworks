@@ -1,6 +1,6 @@
 /*
 Autor: Jakub Rynio
-Opis: Program obliczajacy dzien tygodnia na podstawie daty
+Opis: Program podajacy dzien tygodnia na postawie daty
 */
 
 #include <iostream>
@@ -19,6 +19,7 @@ int main(){
     SYSTEMTIME st;
     GetSystemTime(&st);
 
+    cout<<"UWAGA: program dziala dla lat od roku 999\n";
     cout<<"Ten program oblicza dzien tygodnia na podstawie daty\nWprowadz date w formacie (d m r)\n";
 
     if(!(cin>>dzien) || dzien > 31 || dzien <= 0){
@@ -31,8 +32,8 @@ int main(){
         return 0;
     }
 
-    if(!(cin>>rok) || rok <= 0){
-        cout<<"Rok zostal podany nieprawidlowo\nPoprawny format to (d m r)\n";
+    if(!(cin>>rok) || rok <= 999){
+        cout<<"Rok zostal podany nieprawidlowo\nPoprawny format to (d m r)\nRok musi byc wiekszy od 999";
         return 0;
     }
 
@@ -110,7 +111,10 @@ int main(){
 
         cout<<"Dzis jest "<< dzien_tyg;
     }else{
-            if(miesiac == 11 || miesiac == 12) rok++;
+
+        if(miesiac == 11 || miesiac == 12){
+            rok++;
+        }
 
         cout<<"Dnia "<<dzien<<" "<<miesiac_slownie<<" "<<rok<<"roku "<<byl_bedzie<<dzien_tyg;
     }

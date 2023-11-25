@@ -1,6 +1,6 @@
 /*
 Autor: Jakub Rynio
-Opis: Program obliczajacy podatek w roku 2003
+Opis: Program podajacy dzien tygodnia na postawie daty
 W razie pytan lub uwag pisz do mnie na mesanger lub mail - RynioJakub@proton.me
 */
 
@@ -26,7 +26,7 @@ int main(){
         return 0;
     }
 
-    if(!(cin>>rok) || rok <= 0){
+    if(!(cin>>rok) || rok <= 999){
         cout<<"Rok zostal podany nieprawidlowo\nPoprawny format to (d m r)\n";
         return 0;
     }
