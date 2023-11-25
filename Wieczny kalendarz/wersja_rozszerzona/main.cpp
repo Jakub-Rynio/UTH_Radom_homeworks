@@ -1,13 +1,11 @@
 /*
 Autor: Jakub Rynio
-Opis: Program obliczajacy podatek w roku 2003
-W razie pytan lub uwag pisz do mnie na mesanger lub mail - RynioJakub@proton.me
+Opis: Program obliczajacy dzien tygodnia na podstawie daty
 */
 
 #include <iostream>
 #include <cmath>
 #include <string>
-// Tylko po to aby napisac byl/bedzie
 #include <windows.h>
 #include <winbase.h>
 
@@ -18,7 +16,6 @@ int main(){
     int dzien,miesiac,rok,r,w,nr_dnia;
     string byl_bedzie,dzien_tyg,miesiac_slownie;
 
-    // Tylko po to aby napisac byl/bedzie
     SYSTEMTIME st;
     GetSystemTime(&st);
 
@@ -56,7 +53,6 @@ int main(){
     }
 
 
-    // Tylko po to aby napisac byl/bedzie
     if(st.wYear == rok && st.wMonth == miesiac && st.wDay == dzien){
 
         byl_bedzie = "jest";
