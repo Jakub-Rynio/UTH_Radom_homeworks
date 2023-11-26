@@ -1,6 +1,7 @@
 /*
 Autor: Jakub Rynio
-Opis: Program Przelicza metry na inne jednostki
+Opis: Program przelicza metry na inne jednostki
+W razie pytan lub uwag pisz do mnie na mesanger lub mail - RynioJakub@proton.me
 */
 
 #include <iostream>
