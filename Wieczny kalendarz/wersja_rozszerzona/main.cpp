@@ -1,6 +1,7 @@
 /*
 Autor: Jakub Rynio
 Opis: Program podajacy dzien tygodnia na postawie daty
+W razie pytan lub uwag pisz do mnie na mesanger lub mail - RynioJakub@proton.me
 */
 
 #include <iostream>
