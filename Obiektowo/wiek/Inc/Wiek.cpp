@@ -1,4 +1,5 @@
 // Pobieranie deklaracji tak jak  w main
+//g++ main.cpp Inc/Wiek.cpp aby skompilowac
 #include "Wiek.h"
 
 #include <iostream>
