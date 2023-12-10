@@ -5,7 +5,7 @@ W razie pytan lub uwag pisz do mnie na mesanger lub mail - RynioJakub@proton.me
 */
 #include <iostream>
 
-//scieszka do pliku z deklaracja klasy(jakie funckcje(metody) i zmienne(atrybuty) maja sie znajdowac w klasie)
+//sciezka do pliku z deklaracja klasy(jakie funckcje(metody) i zmienne(atrybuty) maja sie znajdowac w klasie)
 //Jednoczesnie dolaczamy klase do pliku main
 #include "Inc/Wiek.h"
 
