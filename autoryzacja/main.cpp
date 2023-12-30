@@ -1,7 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <string>
-#include "inc/login_system/login.h"
+#include "login.h"
 
 using namespace std;
 
@@ -24,6 +24,8 @@ int main()
         cout << "Dane zostaly podane nieprawidlowo. Podaj je ponownie!";
         cin >> password;
     }
+
+    user_register(login, password);
 
     return 0;
 }
