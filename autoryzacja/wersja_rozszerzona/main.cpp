@@ -10,21 +10,23 @@ using namespace std;
 int main()
 {
     string login, password;
-    bool main_flag = true;
     bool zalogowany_flag = false;
     char wybor;
     int proby = 0;
 
-    while(main_flag){
+    while (true)
+    {
 
-        cout << "Witaj!\n MENU==========\n'1'- aby sie zalogowac\n'2' - aby dodac uzytkownika \n==========\n";
-        if(proby > 0 ){
-            cout << "Zostaly Ci "<< 5 - proby << " proby logowania\n";
+        cout << "Witaj!\n MENU==========\n'1'- aby sie zalogowac\n'2' - aby dodac uzytkownika \nprzytrzymaj crtl + c - aby wyjsc\n==========\n";
+        if (proby > 0)
+        {
+            cout << "Zostaly Ci " << 5 - proby << " proby logowania\n";
         }
 
         wybor = getch();
 
-        if(wybor == '1'){
+        if (wybor == '1')
+        {
 
             cout << "Podaj login: ";
             login = ask_str();
@@ -41,12 +43,16 @@ int main()
                     cout << "Witaj " << login << " Udalo ci sie zalogowac!\nwcisnij 'e' aby sie wylogowac";
 
                     wybor = getch();
-                    if(wybor == 'e'){
+                    if (wybor == 'e')
+                    {
                         zalogowany_flag = false;
                     }
                 }
-            }else{
-                if(proby >= 4){
+            }
+            else
+            {
+                if (proby >= 4)
+                {
 
                     for (int time_coutner = 30; time_coutner > 0; time_coutner--)
                     {
@@ -55,13 +61,17 @@ int main()
                         system("cls");
                     }
                     proby = 0;
-                }else{
+                }
+                else
+                {
                     cout << "Logowanie nie powiodlo sie\n";
                 }
-                
+
                 proby++;
             }
-        } else if(wybor == '2'){
+        }
+        else if (wybor == '2')
+        {
 
             cout << "Podaj login: ";
             login = ask_str();
@@ -70,10 +80,12 @@ int main()
             cout << "Podaj haslo: ";
             password = ask_str();
 
-            if(user_register(login,password)){
+            if (user_register(login, password))
+            {
                 cout << "Pomyslnie dodano uzytkownika o nazwie " << login << endl;
             }
-            else {
+            else
+            {
                 cout << "Podana nazwa uzytkownika jest juz zajeta\n Podaj inna nazwe\n";
             }
         }

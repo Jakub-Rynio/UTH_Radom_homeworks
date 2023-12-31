@@ -9,7 +9,6 @@ const string file_path = "data/users/user-";
 int open_licznik()
 {
 
-    // Odczyt zmiennej licznik z pliku licznik.txt
     string bufor;
     int licznik;
 
@@ -30,10 +29,9 @@ int open_licznik()
 
 bool find_user_login(std::string user_input)
 {
-    int i = 1;
     string find_user_login_file_path, i_str, log;
 
-    while (i <= open_licznik() - 1)
+    for (int i = 1; i <= open_licznik() - 1; i++)
     {
 
         i_str = to_string(i);
@@ -54,11 +52,7 @@ bool find_user_login(std::string user_input)
             user_login_file.close();
             return true;
         }
-        else
-        {
-            i++;
-            user_login_file.close();
-        }
+        else user_login_file.close(); 
     }
 
     return false;
@@ -66,10 +60,9 @@ bool find_user_login(std::string user_input)
 
 bool zalogowano(std::string user_input_login, std::string user_input_password)
 {
-    int i = 1;
-    string find_user_login_file_path, i_str, log,pass;
+    string find_user_login_file_path, i_str, log, pass;
 
-    while (i <= open_licznik() - 1)
+    for (int i = 1; i <= open_licznik() - 1; i++)
     {
 
         i_str = to_string(i);
@@ -82,30 +75,24 @@ bool zalogowano(std::string user_input_login, std::string user_input_password)
         {
             cout << "blad odczytu";
             exit(0);
-
         }
-            getline(user_login_file, log);
+        getline(user_login_file, log);
 
-            if (log == user_input_login)
-            {
-                getline(user_login_file, pass);
-
-                if (pass == user_input_password)
-                {
-                    user_login_file.close();
-                    return true;
-                }
-            }
-        else
+        if (log == user_input_login)
         {
-            i++;
-            user_login_file.close();
+            getline(user_login_file, pass);
+
+            if (pass == user_input_password)
+            {
+                user_login_file.close();
+                return true;
+            }
         }
+        else user_login_file.close(); 
     };
 
     return false;
 };
-
 
 bool user_register(std::string loginn, std::string passwordd)
 {
@@ -132,9 +119,10 @@ bool user_register(std::string loginn, std::string passwordd)
         fstream licznik_file_akt;
         licznik_file_akt.open("data/licznik.txt", ios::out);
         licznik_file_akt << licznik_str;
+        licznik_file_akt.close();
 
         return true;
     }
-    else return false;
-
+    else
+        return false;
 };

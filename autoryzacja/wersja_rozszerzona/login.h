@@ -1,5 +1,3 @@
-#include <string>
-
 //Zwraca wartosc licznika 
 int open_licznik();
 
