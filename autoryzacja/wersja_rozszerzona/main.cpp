@@ -1,3 +1,8 @@
+/*
+Autor: Jakub Rynio
+Opis: Program jest jak widac...
+W razie pytan lub uwag pisz do mnie na mesanger lub mail - RynioJakub@proton.me
+*/
 #include <iostream>
 #include <windows.h>
 #include <string>

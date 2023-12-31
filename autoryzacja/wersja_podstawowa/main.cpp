@@ -1,3 +1,8 @@
+/*
+Autor: Jakub Rynio
+Opis: Program jest jak widac...
+W razie pytan lub uwag pisz do mnie na mesanger lub mail - RynioJakub@proton.me
+*/
 #include <iostream>
 #include <windows.h>
 #include <conio.h>
@@ -5,7 +10,7 @@
 #include <string>
 
 using namespace std;
-
+//sprawdza czy jest taki uzytkownik
 bool zalogowano(std::string user_input_login, std::string user_input_password)
 {
     string log, pass;
