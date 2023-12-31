@@ -1,8 +1,13 @@
 #include <string>
 
-std::string login();
 //Zwraca wartosc licznika 
 int open_licznik();
-bool find_user(std::string, std::string);
+
+//sprawdza czy udalo sie zalogowac
+bool zalogowano(std::string, std::string);
+
+//sprawdza czy istnieje dany login
 bool find_user_login(std::string);
-void user_register(std::string, std::string);
+
+//dodaje uzytkownika do bazy
+bool user_register(std::string, std::string);
