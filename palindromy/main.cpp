@@ -5,17 +5,31 @@
 
 using namespace std;
 
-int main(){
+bool is_palindrom(string ww1)
+{
+
+    string ww2;
+
+    string *str_pointer;
+    str_pointer = &ww1;
+    space_delate(str_pointer);
+    transform(str_pointer->begin(), str_pointer->end(), str_pointer->begin(), ::tolower);
+
+    ww2 = ww1;
+
+    reverse(str_pointer->begin(), str_pointer->end());
+
+    return (ww1 == ww2);
+}
+
+int main()
+{
 
     string w1;
-    string* str_pointer;
 
-    w1 = ask_str("Podaj slowo lub zdanie");
+    w1 = ask_str("Podaj slowo lub zdanie: ");
 
-    str_pointer = &w1;
-    space_delate(str_pointer);
-    transform(str_pointer->begin(),str_pointer->end(), str_pointer->begin(), ::tolower);
-    
-    
+    is_palindrom(w1) ? "podane zdanie jest palindromem" : "podane zdanie nie jest palindromem";
+
     return 0;
 };
