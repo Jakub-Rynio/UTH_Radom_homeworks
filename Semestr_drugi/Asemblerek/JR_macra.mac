@@ -1,0 +1,89 @@
+;Macro Lista (ZM = zmienna)
+
+;wyswietl ZM
+;poczatek
+;koniec
+;string nazwa-ZM tekst-ZM
+
+;====================================
+
+        ; Wyswietl
+;Opis:
+  ; macro do wyswietlania
+
+;Do ustawienia przed uzyciem:
+  ;NIC
+
+;Po zastowowaniu zmienia rejestry:
+  ; ah = 9H
+  ; dx = offset zmiennej
+
+wyswietl MACRO napis
+
+  mov dx, offset napis
+  mov ah,9
+  int 21H 
+  
+
+ENDM
+;====================================
+
+        ; Koniec
+;Opis:
+  ; Konczy program
+
+;Do ustawienia przed uzyciem:
+  ;NIC
+
+;Po zastowowaniu zmienia rejestry:
+  ; ax = 4C00H
+
+
+koniec MACRO
+
+  mov ax, 4C00H
+  int 21H
+
+
+ENDM
+;=====================================
+
+
+        ; Poczatek
+;Opis:
+  ; zaczyna program(przenosi poczatek seg danych do ds)
+
+;Do ustawienia przed uzyciem:
+  ;NIC
+
+;Po zastowowaniu zmienia rejestry:
+  ; ax = @data
+  ; ds = @data
+
+
+poczatek MACRO
+
+  mov ax, @data
+  mov ds, ax
+
+ENDM
+
+;=====================================
+
+
+        ; string
+;Opis:
+  ; Deklaruje zmienna tekstowa !Stosowac w .DATA
+
+;Do ustawienia przed uzyciem:
+  ;NIC
+
+;Po zastowowaniu zmienia rejestry:
+  ; Dodaje zmienna
+
+
+string MACRO nazwa, tekst
+
+  nazwa DB tekst, '$'
+
+ENDM
