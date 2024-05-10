@@ -4,6 +4,7 @@
 ;poczatek
 ;koniec
 ;string nazwa-ZM tekst-ZM
+;EOL
 
 ;====================================
 
@@ -85,5 +86,32 @@ ENDM
 string MACRO nazwa, tekst
 
   nazwa DB tekst, '$'
+
+ENDM
+
+
+;=====================================
+
+
+        ; EOL
+;Opis:
+  ; Koniec lini
+
+;Do ustawienia przed uzyciem:
+  ;NIC
+
+;Po zastowowaniu zmienia rejestry:
+  ; ah = 02H
+  ; dl = 0AH
+
+
+EOL MACRO
+
+   mov dl, 0DH
+    mov ah,02H
+    int 21H
+
+    mov dl, 0AH
+    int 21H
 
 ENDM
