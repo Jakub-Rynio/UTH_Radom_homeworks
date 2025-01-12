@@ -58,8 +58,12 @@ for i in range(items_number):
             os.system("cls")
             continue
         else: break
-
-    weight = get_number(f"Podaj wage przedmiotu {name}: ", "float", True, False)
+    while True:
+        weight = get_number(f"Podaj wage przedmiotu {name}: ", "float", True, False)
+        if weight == capacity:
+            error()
+            continue
+        else: break
     value = get_number(f"Podaj wartosc przedmiotu {name}: ", "float", True, True)
     count_value = get_number(f"Podaj ilosc przedmiotu {name}: ", "int", True, False)
 
